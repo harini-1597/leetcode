@@ -22,25 +22,33 @@ int pop(struct Stack* S){
 }
 
 bool isPalindrome(struct ListNode* head){
-    int count;
-    for(struct ListNode* cur=head; cur!=NULL; cur=cur->next){
+    struct ListNode* cur = head;
+    int count=0;
+    while(cur!=NULL){
         count++;
+        cur=cur->next;
     }
+    cur=head; 
     
     struct Stack* S = createStack(count);
-    for(struct ListNode* sor=head; sor!=NULL; sor=sor->next){
-        push(S, sor->val);
+    while(cur!=NULL){
+        push(S, cur->val);
+        cur=cur->next;
     }
+    cur=head;
+    
     int flag;
-    for(struct ListNode* ptr=head; ptr!=NULL; ptr=ptr->next){
-        if(ptr->val==pop(S)){
+    while(cur!=NULL){
+        if(cur->val == pop(S)){
             flag=1;
         }
         else{
             flag=0;
             break;
         }
+        cur=cur->next;
     }
+    
     if(flag==1){
         return 1;
     }
