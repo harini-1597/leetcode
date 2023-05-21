@@ -1,0 +1,13 @@
+int removeDuplicates(vector<int>& nums) {
+        unordered_set<int> found;
+        vector<int> ans;
+        for(int i=0; i<nums.size(); i++){
+            if(found.find(nums[i]) == found.end())
+                ans.push_back(nums[i]);
+            
+            found.insert(nums[i]);
+        }
+        for(int i=0; i<ans.size(); i++)
+            nums[i]=ans[i];
+        return ans.size();
+    }
