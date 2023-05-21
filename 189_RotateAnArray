@@ -1,0 +1,8 @@
+void rotate(vector<int>& nums, int k) {
+        int n=nums.size(); vector<int> arr(n);  int j;
+        for(int i=0; i<n; i++){
+            j=((i+k)%n);
+            arr[j]=nums[i];
+        }
+        nums=arr;
+    }
