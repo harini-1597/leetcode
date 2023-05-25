@@ -1,0 +1,107 @@
+bool isValidSudoku(vector<vector<char>>& board) {
+        unordered_set<int>       
+        map,map2,map3,map4,map5,map6,map7,map8,map9;
+        for(int i=0; i<9; i++){
+            for(int j=0; j<9; j++){
+                if(board[i][j]=='.')
+                    continue;
+                if(map.count(board[i][j]))
+                    return false;
+                else
+                    map.insert(board[i][j]);
+            }
+            map.clear();
+        }
+        map.clear();
+        for(int i=0; i<9; i++){
+            for(int j=0; j<9; j++){
+                if(board[j][i]=='.')
+                    continue;
+                if(map.count(board[j][i]))
+                    return false;
+                else
+                    map.insert(board[j][i]);
+            }
+            map.clear();
+        }
+        map.clear();
+        for(int i=0; i<9; i++){
+            for(int j=0; j<9; j++){
+                if(i<=2 && j<=2){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map.count(board[i][j]))
+                        return false;
+                    else
+                        map.insert(board[i][j]);
+                }
+                if(i<=2 && (j>2 && j<6)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map2.count(board[i][j]))
+                        return false;
+                    else
+                        map2.insert(board[i][j]);
+                }
+                if(i<=2 && (j>5 && j<9)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map3.count(board[i][j]))
+                        return false;
+                    else
+                        map3.insert(board[i][j]);
+                }
+                if((i>2 && i<6) && j<=2){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map4.count(board[i][j]))
+                        return false;
+                    else
+                        map4.insert(board[i][j]);
+                }
+                if((i>2 && i<6) && (j>2 && j<6)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map5.count(board[i][j]))
+                        return false;
+                    else
+                        map5.insert(board[i][j]);
+                }
+                if((i>2 && i<6) && (j>5 && j<9)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map6.count(board[i][j]))
+                        return false;
+                    else
+                        map6.insert(board[i][j]);
+                }
+                if((i>5 && i<9) && j<=2){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map7.count(board[i][j]))
+                        return false;
+                    else
+                        map7.insert(board[i][j]);
+                }
+                if((i>5 && i<9) && (j>2 && j<6)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map8.count(board[i][j]))
+                        return false;
+                    else
+                        map8.insert(board[i][j]);
+                }
+                if((i>5 && i<9) && (j>5 && j<9)){
+                    if(board[i][j]=='.')
+                        continue;
+                    if(map9.count(board[i][j]))
+                        return false;
+                    else
+                        map9.insert(board[i][j]);
+                }
+            }
+        }
+        map2.clear(); map3.clear(); map4.clear(); map5.clear();
+        map6.clear(); map7.clear(); map8.clear(); map9.clear();
+        return true;
+    }
