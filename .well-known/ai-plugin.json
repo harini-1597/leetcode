@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Contoso123 API",
+    "name_for_model": "contoso123api",
+    "description_for_human": "Get details of shirts and clothing from Contoso123 ecom website",
+    "description_for_model": "Plugin for searching through Contoso123 clothes and shirts. Use it whenever a user queries for information on clothes and Contoso123 products.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:7777/openai.json",
+        "is_user_authenticated": false
+    },
+    "logo_url": "https://t3.ftcdn.net/jpg/03/33/09/88/360_F_333098851_oaiN8o7glILcg7nsT1vhSPewI1wSjzyN.jpg",
+    "contact_email": "support@example.com",
+    "legal_info_url": "http://www.example.com/legal"
+}

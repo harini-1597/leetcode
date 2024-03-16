@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Contoso123 Store API",
+    "description": "API for searching through Contoso123 products and clothes. Use it whenever a user queries for information on Contoso123 products.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7777"
+    }
+  ],
+  "paths": {
+    "/api/products/": {
+      "get": {
+        "summary": "Fetch all available products",
+        "description": "This API is used to fetch all the products available",
+        "operationId": "getProducts",
+        "responses": {
+          "200": {
+            "description": "Fetch all available products"
+          }
+        }
+      }
+    },
+    "/api/products/search?ProductName={ProductName}": {
+      "get": {
+        "summary": "Used to fetch all details of a particular product user wants to order.",
+        "description": "Used to fetch all details of a particular product user wants to order.",
+        "operationId": "getProductDetailsByName",
+        "parameters": [
+          {
+            "name": "ProductName",
+            "in": "path",
+            "required": true,
+            "description": "Name of the product",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Used to fetch all details of a particular product user wants to order."
+          }
+        }
+      }
+    },
+    "/api/products/brand?ProductBrand={ProductBrand}": {
+      "get": {
+        "summary": "Fetch all items belonging to a certain brand",
+        "operationId": "getProductsInBrand",
+        "description": "This API is used to fetch all items belonging to a certain brand",
+        "parameters": [
+          {
+            "name": "ProductBrand",
+            "in": "path",
+            "required": true,
+            "description": "Name of the brand",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetch all items belonging to a certain brand"
+          }
+        }
+      }
+    }
+  }
+}
